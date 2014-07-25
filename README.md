@@ -18,17 +18,17 @@ You should create one R script called run_analysis.R that does the following:
 The Solution/Algorithm.
 =======================
 The script follows the steps described bellow:
-1. Download, unzip and reading the Data Source
-2. Reads the "Feature Names" from the file "features.txt"
-3. Fetch data and activity Labels for both test and training sets
-4. Merges the training set and the test set into a single data set
-5. Transform the resulting dataframe into a matrix in order to ease the data manipulation
-6. Subsets from the complete data set the desired variables (mean and standard deviation)
-7. Adds a column to allow the identification of the activity performed (laying, standing, etc)
-  7.1 Since the info is coded as numbers, we loop through each ID making the proper substitutions (id -> description)
-8. Enhace column name readability (changing the short names for the long, descriptive ones)
-9. Writes a CSV file containing the resulting tidy data
-10. Using the shape2 library, melt and cast the information to create a second, independent data set fullfilling the 5th requirement.
+. 1. Download, unzip and reading the Data Source
+. 2. Reads the "Feature Names" from the file "features.txt"
+. 3. Fetch data and activity Labels for both test and training sets
+. 4. Merges the training set and the test set into a single data set
+. 5. Transform the resulting dataframe into a matrix in order to ease the data manipulation
+. 6. Subsets from the complete data set the desired variables (mean and standard deviation)
+. 7. Adds a column to allow the identification of the activity performed (laying, standing, etc)
+  .7.1 Since the info is coded as numbers, we loop through each ID making the proper substitutions (id -> description)
+. 8. Enhace column name readability (changing the short names for the long, descriptive ones)
+. 9. Writes a CSV file containing the resulting tidy data
+. 10. Using the shape2 library, melt and cast the information to create a second, independent data set fullfilling the 5th requirement.
 
 Enhancement Points
 ==================
