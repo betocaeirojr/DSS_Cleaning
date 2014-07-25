@@ -1,6 +1,7 @@
-# Data Science Specialization - Getting and Cleaning Data Module
+# Data Science Specialization - 
+## Getting and Cleaning Data Module
 
-## run_analysis.R
+### run_analysis.R
 
 Context
 =======
