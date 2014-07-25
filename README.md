@@ -31,8 +31,9 @@ The script follows the steps described bellow:
 * 7. Adds a column to allow the identification of the activity performed (laying, standing, etc)
 * 7.1 Since the info is coded as numbers, we loop through each ID making the proper substitutions (id -> description)
 * 8. Enhace column name readability (changing the short names for the long, descriptive ones)
-* 9. Writes a CSV file containing the resulting tidy data
+* 9. Writes a CSV file containing the resulting tidy data ("cleaning_project_assignment_tidydataset.csv.txt")
 * 10. Using the shape2 library, melt and cast the information to create a second, independent data set fullfilling the 5th requirement.
+* 11. Writes a second CSV file containing the second tidy data set ("")
 
 Enhancement Points
 ==================
