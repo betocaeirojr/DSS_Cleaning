@@ -26,7 +26,6 @@ testSubjectID <- read.table(fileList[14], col.name="SubjectID")
 trainSubjectID <- read.table(fileList[26], col.name="SubjectID")
 valuesSubjectID <- rbind(testSubjectID, trainSubjectID)
 
-
 # Step 3 - Filtering only the desired features - mean and standard deviation
 filtered_features <- grep("-mean\\(\\)|-std\\(\\)", featureNames[, 2])
 valuesSamples <- valuesSamples[,filtered_features]
@@ -62,4 +61,8 @@ aggregatedDataSet <- aggregate(completeDataSet, by=byValue, FUN=mean, na.rm=TRUE
 
 # Step 8 - Removing the SubjectID and ActivityLabel once they are already being used in aggregation
 aggregatedDataSet <- aggregatedDataSet[,-(3:4)]
+
+# Step 9 - Saves the second tidydata file to a file
 write.csv(aggregatedDataSet, file="./cleaning_project_assignment_aggregated_tidydataset.csv.txt")
+
+print("Godbye!")

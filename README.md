@@ -24,20 +24,26 @@ The Solution/Algorithm.
 The script follows the steps described bellow:
 * 1. Download, unzip the files to your working directory and reads the data source
 * 2. Reads the "Feature Names" from the file "features.txt"
-* 3. Fetch data and activity Labels for both test and training sets
-* 4. Merges the training set and the test set into a single data set
-* 5. Transform the resulting dataframe into a matrix in order to ease the data manipulation
-* 6. Subsets from the complete data set the desired variables (mean and standard deviation)
-* 7. Adds a column to allow the identification of the activity performed (laying, standing, etc)
-* 7.1 Since the info is coded as numbers, we loop through each ID making the proper substitutions (id -> description)
-* 8. Enhace column name readability (changing the short names for the long, descriptive ones)
-* 9. Writes a CSV file containing the resulting tidy data ("cleaning_project_assignment_tidydataset.csv.txt")
-* 10. Using the shape2 library, melt and cast the information to create a second, independent data set fullfilling the 5th requirement.
-* 11. Writes a second CSV file containing the second tidy data set ("")
+* 3. Fetches Data, Activity IDs and Subject IDs for both test and training sets
+* 4. Filters only the desired features - mean and standard deviation - using Reg Exp 
+* ---- grep("-mean\\(\\)|-std\\(\\)",...)
+* 5. Label the values
+* 6. Merging all values (Subject ID, Activity ID, Data)
+* 7. Substitute the Activity ID for the Activity Description for enhanced legibility
+* 8. Substitute column names for the Long Description ones (using sub/reg.exp)
+* ---- sub("^t", "time", ...)
+* ---- sub("^f", "frequency",...)
+* ---- sub("Acc", "Accelerometer", ...)
+* ---- sub("Gyro", "Gyroscope", ...)
+* ---- sub("Mag", "Magnitude", names(completeDataSet))
+* 9. Writes the first TidyData file, named = cleaning_project_assignment_tidydataset.csv.txt
+* 10. Aggregates the info by activity and subject
+* 11. Removes the columns not used due to duplication effects of aggregate function
+* 12. Writes the second TidyData file, named = cleaning_project_assignment_aggregated_tidydataset.csv.txt
 
-Enhancement Points
-==================
-Ideally at steps 2 and 3 I could have coded a little bit more dinamically, since my first solution fetches the files directly. (instead of looping from all files searching for the desired one, I accessed it directly through its index)
-
-
-
+Output
+=======
+This script produces 2 files:
+* - cleaning_project_assignment_tidydataset.csv.txt (the "raw" tidydata file)
+* - cleaning_project_assignment_aggregated_tidydataset.csv.txt (the "aggregated" tidydata file)
+Both files are saved in the same directory where the script is located.
